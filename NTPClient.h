@@ -108,6 +108,12 @@ class NTPClient {
 	unsigned long getEpochTime() const;
 
 	/**
+	 * @return secs argument (or 0 for current date) formatted to ISO 8601
+	 * like `2004-02-12T15:19:21+00:00`
+	 */
+	String getFormattedDate(unsigned long secs = 0);
+
+	/**
 	 * Stops the underlying UDP client
 	 */
 	void end();
