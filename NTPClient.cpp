@@ -151,8 +151,8 @@ int NTPClient::getSeconds() const {
 	return (this->getEpochTime() % 60);
 }
 
-String NTPClient::getFormattedTime() const {
-	unsigned long rawTime = this->getEpochTime();
+String NTPClient::getFormattedTime(unsigned long secs) {
+	unsigned long rawTime = secs ? secs : this->getEpochTime();
 	unsigned long hours = (rawTime % 86400L) / 3600;
 	String hoursStr = hours < 10 ? "0" + String(hours) : String(hours);
 
